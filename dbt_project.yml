@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'dbt_redshift_project'
+name: 'analytics'
 version: '1.0.0'
 config-version: 2
 
@@ -37,10 +37,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   my_new_project:
-    # Applies to all files under models/example/
     example:
-      +materialized: table
+      +materialized: table  # All models in example/ are tables
     staging:
-      +materialized: view
+      +materialized: view  # All models in staging/ are views
     marts:
-      +materialized: table
+      +materialized: table  # All models in marts/ are tables
